@@ -1,0 +1,3 @@
+with open(r"C:\Users\HP\Downloads\Geolife Trajectories 1.3\Geolife Trajectories 1.3\Data\000\Trajectory\20090629173335.plt", "r") as f:
+    for i in range(10):
+        print(f"Line {i}: {repr(f.readline())}")

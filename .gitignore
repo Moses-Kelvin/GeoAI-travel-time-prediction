@@ -1,0 +1,25 @@
+# Virtual environment
+venv/
+env/
+geolife_env/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files
+*.csv
+!trip_data.csv      # ← keep this specific file
+*.plt
+
+# Environment variables (contains API keys)
+.env.local
+.env
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE folders
+.vscode/
+.idea/
