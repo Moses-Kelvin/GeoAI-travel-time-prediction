@@ -6,14 +6,14 @@
 A Python-based pipeline that extracts real travel times from raw GPS trajectories (Microsoft Geolife), compares them with OpenRouteService (ORS) walking estimates, and trains a Random Forest model to predict actual trip duration. The project highlights the importance of stop detection and travel behavior modeling.
 
 ![Example GPS trajectory with stops visualized](./screenshots/geolife_trip.png)
-![Scatter plot: actual vs ORS duration](./screenshots/actual_vs_ors.png)
+
 ---
 
 ## 🎯 Objective
 
 Conventional routing APIs assume continuous movement, but real trips include waiting, detours, and idle periods. This project investigates:
 
-- How well do ORS driving estimates match actual travel times?
+- How well do ORS walking estimates match actual travel times?
 - Can a simple machine learning model predict actual duration using only temporal and distance features?
 - What does the prediction error reveal about missing factors (e.g., stops)?
 
@@ -54,7 +54,7 @@ Conventional routing APIs assume continuous movement, but real trips include wai
 🚨 **Observation:**  
 The model performed worse than the baseline.
 
-Residual analysis showed that **long idle periods (stops > 10 minutes)** dominate actual travel time. ORS assumes continuous driving, leading to systematic underestimation.
+Residual analysis showed that **long idle periods (stops > 10 minutes)** dominate actual travel time. ORS assumes continuous walking, leading to systematic underestimation.
 
 ---
 
@@ -118,7 +118,7 @@ python train_model.py
 
 ## 🧠 Key Findings & Interpretation
 
-- ORS driving estimates model **movement only**, not real-world delays  
+- ORS walking estimates model **movement only**, not real-world delays  
 - Random Forest fails due to **missing behavioral features (stops)**  
 - Travel time prediction requires **trajectory segmentation (move vs idle)**  
 
