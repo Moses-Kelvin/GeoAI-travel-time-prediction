@@ -37,7 +37,7 @@ for file_path in plt_files:
         dist_km = ((end_lat - start_lat)**2 + (end_lon - start_lon)**2)**0.5 * 111
         
         # ORS request
-        url = f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={api_key}&start={start_lon},{start_lat}&end={end_lon},{end_lat}"
+        url = f"https://api.openrouteservice.org/v2/directions/foot-walking?api_key={api_key}&start={start_lon},{start_lat}&end={end_lon},{end_lat}"
         resp = requests.get(url, timeout=10)
         if resp.status_code == 200:
             data = resp.json()

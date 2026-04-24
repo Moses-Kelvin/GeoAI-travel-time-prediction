@@ -47,7 +47,7 @@ print(f"Actual duration: {actual_duration_min:.2f} min")
 
 load_dotenv()
 api_key = os.getenv("ORS_API_KEY")
-url = f"https://api.openrouteservice.org/v2/directions/driving-car?api_key={api_key}&start={start_lon},{start_lat}&end={end_lon},{end_lat}"
+url = f"https://api.openrouteservice.org/v2/directions/foot-walking?api_key={api_key}&start={start_lon},{start_lat}&end={end_lon},{end_lat}"
 
 response = requests.get(url)
 if response.status_code == 200:

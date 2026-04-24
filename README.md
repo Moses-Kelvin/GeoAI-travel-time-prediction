@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Data](https://img.shields.io/badge/Dataset-Microsoft%20Geolife-orange)
 
-A Python-based pipeline that extracts real travel times from raw GPS trajectories (Microsoft Geolife), compares them with OpenRouteService (ORS) driving estimates, and trains a Random Forest model to predict actual trip duration. The project highlights the importance of stop detection and travel behavior modeling.
+A Python-based pipeline that extracts real travel times from raw GPS trajectories (Microsoft Geolife), compares them with OpenRouteService (ORS) walking estimates, and trains a Random Forest model to predict actual trip duration. The project highlights the importance of stop detection and travel behavior modeling.
 
 ![Example GPS trajectory with stops visualized](./screenshots/geolife_trip.png)
 ![Scatter plot: actual vs ORS duration](./screenshots/actual_vs_ors.png)
@@ -45,9 +45,9 @@ Conventional routing APIs assume continuous movement, but real trips include wai
 
 | Metric | Value |
 |--------|-------|
-| Number of trips | 45 |
-| Actual travel time range | 2 – 918 minutes |
-| ORS estimate range | 0.4 – 11.2 minutes |
+| Number of trips | 96 |
+| Actual travel time range |  0.9 – 2238 minutes |
+| ORS estimate range | 0.5 – 671 minutes |
 | Random Forest MAE | **245.25 minutes** |
 | Baseline MAE (predict mean) | **209.83 minutes** |
 
@@ -66,8 +66,8 @@ Residual analysis showed that **long idle periods (stops > 10 minutes)** dominat
 | End | (40.009328, 116.320887) |
 | Straight-line distance | 2.75 km |
 | Actual duration | 498 minutes (8.3 hours) |
-| ORS estimate | 7.7 minutes |
-| Difference | +490 minutes |
+| ORS walking estimate | 38.7 minutes |
+| Difference | +459 minutes |
 
 The GPS trace clearly shows extended stopping periods (e.g., resting, shopping, waiting), which explains the massive discrepancy.
 
